@@ -39,8 +39,8 @@ fpdf
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone https://github.com/MohammedHamza0/Chat-with-pdf.git
+cd Chat-with-pdf
 ```
 
 2. Create a virtual environment with Python 3.10:
