@@ -5,6 +5,11 @@ import os
 
 app = FastAPI()
 
+
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the PDF Processing API!"}
+
 @app.post("/process-pdf/")
 async def process_pdf(file: UploadFile):
     try:
@@ -63,3 +68,9 @@ async def save_to_pdf(content: str = Form(...), filename: str = Form(...)):
         return {"message": "PDF saved successfully.", "file_path": file_path}
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
+
+with open("README.md", "r", encoding="utf-8") as file:
+    content = file.read()
+
+with open("README.md", "w", encoding="utf-8") as file:
+    file.write(content)
